@@ -22,10 +22,10 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logos/logo.png"
-            alt="Vehiql Logo"
-            width={256}          // intrinsic size for sharpness
+            alt="SplitPal Logo"
+            width={256}         
             height={256}
-            className="h-full w-auto object-contain"  // fills the 64 px bar
+            className="h-full w-auto object-contain"
             priority
           />
         </Link>
@@ -35,13 +35,13 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="#features"
-              className="text-sm font-medium hover:text-blue-600 transition"
+              className="text-sm font-medium hover:text-sky-600 transition"
             >
               Features
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium hover:text-blue-600 transition"
+              className="text-sm font-medium hover:text-sky-600 transition"
             >
               How It Works
             </Link>
@@ -54,7 +54,7 @@ export default function Header() {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2 hover:text-blue-600 hover:border-blue-600 transition"
+                className="hidden md:inline-flex items-center gap-2 hover:text-sky-600 hover:border-sky-600 transition"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Dashboard
@@ -85,8 +85,8 @@ export default function Header() {
             </SignInButton>
 
             <SignUpButton>
-              <Button className="bg-blue-600 hover:bg-blue-700 border-none">
-                Get Started
+              <Button className="bg-sky-600 hover:bg-sky-700 border-none">
+                Get Started
               </Button>
             </SignUpButton>
           </Unauthenticated>
