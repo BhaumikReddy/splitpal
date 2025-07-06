@@ -322,22 +322,17 @@ export default function Home() {
                     </div>
 
                     {/* Step Visual */}
-                    <div className="mt-8">
+                    <div className="mt-6">
                       <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                        <Card className="relative border-0 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
-                          <CardHeader className="p-6">
-                            <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl flex items-center justify-center">
-                              <Image
-                                src={`/placeholder.svg?height=200&width=300&text=Step ${step.number}`}
-                                alt={`Step ${step.number}: ${step.title}`}
-                                width={300}
-                                height={200}
-                                className="w-full h-full object-cover rounded-2xl opacity-80"
-                              />
-                            </div>
-                          </CardHeader>
-                        </Card>
+                        <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-4 shadow-xl hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
+                          <Image
+                            src={`/placeholder.svg?height=200&width=300&text=Step ${step.number}`}
+                            alt={`Step ${step.number}: ${step.title}`}
+                            width={300}
+                            height={200}
+                            className="w-full h-auto rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

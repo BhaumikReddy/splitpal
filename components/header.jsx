@@ -16,7 +16,7 @@ export default function Header() {
   const path = usePathname();
 
   return (
-    <header className="fixed top-0 w-full border-b bg-white/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-white/60">
+    <header className="fixed top-0 w-full border-b border-gray-800 bg-black/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-black/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* -------- Logo -------- */}
         <Link href="/" className="flex items-center gap-2">
@@ -35,15 +35,15 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="#features"
-              className="text-sm font-medium hover:text-sky-600 transition"
+              className="text-sm font-medium text-white hover:text-sky-400 transition-colors duration-200"
             >
               Features
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium hover:text-sky-600 transition"
+              className="text-sm font-medium text-white hover:text-sky-400 transition-colors duration-200"
             >
-              How It Works
+              How It Works
             </Link>
           </div>
         )}
@@ -54,14 +54,22 @@ export default function Header() {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2 hover:text-sky-600 hover:border-sky-600 transition"
+                className="hidden md:inline-flex items-center gap-2 !text-white !border-gray-700 hover:!text-sky-400 hover:!border-sky-400 transition-colors duration-200 !bg-transparent hover:!bg-gray-800/50"
+                style={{
+                  color: 'white',
+                  borderColor: '#374151',
+                  backgroundColor: 'transparent'
+                }}
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Dashboard
               </Button>
               <Button
                 variant="ghost"
-                className="md:hidden w-10 h-10 p-0"
+                className="md:hidden w-10 h-10 p-0 !text-white hover:!text-sky-400 hover:!bg-gray-800"
+                style={{
+                  color: 'white'
+                }}
               >
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
@@ -81,11 +89,11 @@ export default function Header() {
 
           <Unauthenticated>
             <SignInButton>
-              <Button variant="ghost">Sign In</Button>
+              <Button variant="ghost" className="text-white hover:text-sky-400 hover:bg-gray-800">Sign In</Button>
             </SignInButton>
 
             <SignUpButton>
-              <Button className="bg-sky-600 hover:bg-sky-700 border-none">
+              <Button className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white border-none shadow-lg hover:shadow-sky-500/25 transition-all duration-300">
                 Get Started
               </Button>
             </SignUpButton>
@@ -94,7 +102,7 @@ export default function Header() {
       </nav>
 
       {/* -------- Loading bar -------- */}
-      {isLoading && <BarLoader width="100%" color="#2596be" />}
+      {isLoading && <BarLoader width="100%" color="#0ea5e9" />}
     </header>
   );
 }

@@ -1,6 +1,5 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
-import { internal } from "./_generated/api";
 
 export const store = mutation({
   args: {},
@@ -11,10 +10,6 @@ export const store = mutation({
     }
 
     // Check if we've already stored this identity before.
-    // Note: If you don't want to define an index right away, you can use
-    // ctx.db.query("users")
-    //  .filter(q => q.eq(q.field("tokenIdentifier"), identity.tokenIdentifier))
-    //  .unique();
     const user = await ctx.db
       .query("users")
       .withIndex("by_token", (q) =>
@@ -67,8 +62,23 @@ export const searchUsers = query({
     query: v.string(),
   },
   handler: async (ctx, args) => {
-    // Use centralized getCurrentUser function
-    const currentUser = await ctx.runQuery(internal.users.getCurrentUser);
+    // Check if user is authenticated first
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      return [];
+    }
+
+    // Get current user
+    const currentUser = await ctx.db
+      .query("users")
+      .withIndex("by_token", (q) =>
+        q.eq("tokenIdentifier", identity.tokenIdentifier)
+      )
+      .first();
+
+    if (!currentUser) {
+      return [];
+    }
 
     // Don't search if query is too short
     if (args.query.length < 2) {
