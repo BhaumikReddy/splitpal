@@ -8,16 +8,22 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SplitPal",
+  title: "SplitPal - Smart Expense Splitting",
   description: "Easily split and track your expenses, all in one place.",
+  icons: {
+    icon: [
+      { url: '/app/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/app/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/app/icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/logos/logo-s.png" sizes="any" />
-      </head>
       <body className={`${inter.className} bg-black text-white`} suppressHydrationWarning={true}>
         <ClerkProvider
           publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}

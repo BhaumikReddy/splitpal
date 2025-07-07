@@ -82,8 +82,8 @@ export default function Home() {
     },
     {
       number: "03",
-      title: "Settle Up & Track",
-      description: "Send payment reminders, track settlements, and get detailed reports. Keep everyone accountable effortlessly.",
+      title: "AI Reports & Settle Up",
+      description: "Get AI-powered monthly insights and spending analysis. Send payment reminders, track settlements, and discover smart spending patterns effortlessly.",
       icon: Share2,
       color: "blue",
     },
@@ -131,7 +131,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 bg-sky-500/20 backdrop-blur-sm border border-sky-500/30 text-sky-300 px-6 py-3 rounded-full text-sm font-medium animate-pulse-glow mt-12">
               <Sparkles className="h-4 w-4" />
-              Trusted by 10,000+ users worldwide
+              AI-Powered • Trusted by 10,000+ users worldwide
             </div>
 
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-200 to-blue-400 bg-clip-text text-transparent animate-float">
@@ -142,7 +142,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              The smartest way to manage shared expenses. Split bills, track spending, and get detailed reports—all in
+              The smartest way to manage shared expenses. Split bills, track spending, and get AI-generated monthly reports—all in
               one beautiful app.
             </p>
 
@@ -225,8 +225,8 @@ export default function Home() {
               },
               {
                 icon: Mail,
-                title: "Email Reports",
-                desc: "Get detailed reports delivered to your inbox. Weekly summaries and custom breakdowns on demand.",
+                title: "AI Email Reports",
+                desc: "Get intelligent monthly reports powered by AI. Smart insights, spending patterns, and personalized recommendations delivered to your inbox.",
                 color: "purple",
               },
               {
@@ -262,7 +262,7 @@ export default function Home() {
         </div>
       </section>
       {/* How It Works Section */}
-      <section id="how-it-works" ref={howItWorksRef} className="py-32 pb-48 relative overflow-hidden">
+      <section id="how-it-works" ref={howItWorksRef} className="py-32 pb-[32rem] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-black to-gray-900" />
 
         {/* Floating background elements */}
@@ -280,7 +280,7 @@ export default function Home() {
         />
 
         <div className="relative z-10 container mx-auto px-4">
-          <div className="text-center space-y-6 mb-20">
+          <div className="text-center space-y-6 mb-12">
             <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               How It Works
             </h2>
@@ -289,9 +289,9 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Horizontal Steps Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20">
+          {/* Simplified Steps Layout */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
               {steps.map((step, index) => (
                 <div
                   key={index}
@@ -300,42 +300,30 @@ export default function Home() {
                     transform: `translateY(${scrollY * 0.03 * (index + 1)}px)`,
                   }}
                 >
-                  <div className="text-center">
-                    {/* Step Number and Icon */}
-                    <div className="flex flex-col items-center mb-8">
-                      <div className="relative mb-6">
-                        <span className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">
-                          {step.number}
-                        </span>
-                      </div>
-                      <div
-                        className={`w-20 h-20 bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 rounded-2xl flex items-center justify-center shadow-lg mb-6 transform hover:scale-110 hover:rotate-6 transition-all duration-300`}
-                      >
-                        <step.icon className="h-10 w-10 text-white" />
-                      </div>
+                  {/* Step Number and Icon */}
+                  <div className="flex flex-col items-center mb-8">
+                    <div className="relative mb-6">
+                      <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">
+                        {step.number}
+                      </span>
                     </div>
-
-                    {/* Step Content */}
-                    <div className="space-y-6">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white">{step.title}</h3>
-                      <p className="text-lg text-gray-400 leading-relaxed">{step.description}</p>
-                    </div>
-
-                    {/* Step Visual */}
-                    <div className="mt-6">
-                      <div className="relative group">
-                        <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-4 shadow-xl hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
-                          <Image
-                            src={`/placeholder.svg?height=200&width=300&text=Step ${step.number}`}
-                            alt={`Step ${step.number}: ${step.title}`}
-                            width={300}
-                            height={200}
-                            className="w-full h-auto rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
-                          />
-                        </div>
-                      </div>
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 rounded-2xl flex items-center justify-center shadow-xl mb-6 transform hover:scale-110 hover:rotate-6 transition-all duration-300 hover:shadow-${step.color}-500/50`}
+                    >
+                      <step.icon className="h-8 w-8 text-white" />
                     </div>
                   </div>
+
+                  {/* Step Content Box */}
+                  <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:scale-105">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">{step.title}</h3>
+                    <p className="text-base text-gray-400 leading-relaxed">{step.description}</p>
+                  </div>
+
+                  {/* Connection Line (except for last step) */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:block absolute top-16 left-full w-16 h-0.5 bg-gradient-to-r from-sky-500/50 to-purple-500/50 transform -translate-x-8"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -439,8 +427,8 @@ export default function Home() {
               Ready to split smarter?
             </h2>
             <p className="text-xl text-sky-100 leading-relaxed max-w-2xl mx-auto">
-              Join thousands of users who trust SplitPal to manage their shared expenses. Start your free account
-              today—no credit card required.
+              Join thousands of users who trust SplitPal's AI-powered expense management. Get smart monthly reports and insights—start your free account
+              today, no credit card required.
             </p>
             <Link href="/dashboard">
               <Button
