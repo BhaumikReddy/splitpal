@@ -80,7 +80,10 @@ SplitPAL leverages Google Gemini API to generate personalized monthly expense su
 ## Screenshots
 
 ![Landing Page](./screenshots/img1.png)
+
 ![Dashboard](./screenshots/img2.png)
+
 ![Split Expenses](./screenshots/img3.png)
+
 ![Settle Expenses](./screenshots/img4.png)
 
