@@ -1,6 +1,6 @@
 # 💸 SplitPAL
 
-**SplitPAL** is a modern, full-stack web application that allows users to **track, split, and manage expenses** with friends or groups. Designed with a sleek UI and real-time features, SplitPAL makes bill splitting and expense tracking effortless.
+SplitPAL is a full-stack expense tracker and bill-splitting app designed for seamless group finance management. With real-time syncing, AI-generated financial tips, and a clean UI, SplitPAL simplifies the way you manage and share expenses.
 
 [🌐 Live Demo](https://splitpal.vercel.app)
 
@@ -46,7 +46,7 @@ cd splitpal
 ```
 ### 2. Install Dependencies
 ```bash
-npm Install
+npm install
 ```
 ### 3. Environment variables
 Create a `.env.local` file and add the following:
@@ -76,14 +76,14 @@ SplitPAL leverages Google Gemini API to generate personalized monthly expense su
 - Applied responsive design principles and consistent theming with Tailwind CSS
 - Gained experience with cloud deployment using Vercel
 - Focused on delivering user-centric features like reminders, reports, and dashboard analytics
-
+---
 ## Screenshots
 
 ![Landing Page](./screenshots/img1.png)
-
+---
 ![Dashboard](./screenshots/img2.png)
-
+---
 ![Split Expenses](./screenshots/img3.png)
-
+---
 ![Settle Expenses](./screenshots/img4.png)
-
+---
